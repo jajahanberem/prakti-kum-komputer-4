@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Uphold Justice | Firma Hukum & Advokat Profesional</title>
+    <style>
+        /* --- RESET & ROOT STYLE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-red: #8b1e24;   /* Merah Marun / Bold Red */
+            --bg-cream: #fbf8f1;      /* Cream Lembut */
+            --bg-cream-dark: #f3edd7; /* Cream Lebih Tua untuk Kontras */
+            --text-dark: #2c2520;     /* Hitam Kecokelatan */
+            --text-light: #ffffff;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            line-height: 1.6;
+        }
+
+        /* --- FONT ELEGAN UNTUK JUDUL --- */
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-red);
+            border-bottom: 3px solid var(--bg-cream-dark);
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 24px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        .logo span {
+            color: var(--bg-cream-dark);
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--bg-cream-dark);
+        }
+
+        /* --- HERO SECTION WITH STATUE BACKGROUND --- */
+        .hero {
+            height: 100vh;
+            /* Menggunakan gambar patung Lady Justice sebagai corak latar belakang */
+            background: linear-gradient(rgba(139, 30, 36, 0.9), rgba(44, 37, 32, 0.85)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: var(--bg-cream);
+        }
+
+        .hero-content p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: var(--bg-cream-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--bg-cream-dark);
+            color: var(--primary-red);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+            border: 2px solid var(--bg-cream-dark);
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--bg-cream-dark);
+        }
+
+        /* --- SECTION STRUCTURE --- */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--primary-red);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-red);
+            margin: 15px auto 0;
+        }
+
+        /* --- TENTANG KAMI --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #4a423d;
+            text-align: justify;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-box {
+            background-color: var(--bg-cream-dark);
+            padding: 30px;
+            text-align: center;
+            border-top: 4px solid var(--primary-red);
+            border-radius: 4px;
+        }
+
+        .stat-box h4 {
+            font-size: 36px;
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 13px;
+            color: #5a504a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* --- BIDANG PRAKTIK --- */
+        .practice-bg {
+            background-color: var(--bg-cream-dark);
+        }
+
+        .grid-practice {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .practice-card {
+            background-color: var(--bg-cream);
+            padding: 40px 30px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139,30,36,0.1);
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .practice-card h3 {
+            font-size: 22px;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .practice-card p {
+            font-size: 15px;
+            color: #5a504a;
+        }
+
+        /* --- TIM ADVOKAT (8 ANGGOTA) --- */
+        .grid-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .team-card {
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--bg-cream-dark);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-img {
+            height: 280px;
+            background-color: var(--primary-red);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Gradasi merah gelap estetik sebagai representasi foto siluet */
+        .lawyer-1 { background: linear-gradient(135deg, #6b1418, #9b282e); }
+        .lawyer-2 { background: linear-gradient(135deg, #5c1215, #8b1e24); }
+        .lawyer-3 { background: linear-gradient(135deg, #4d0f11, #7c1a1f); }
+        .lawyer-4 { background: linear-gradient(135deg, #6b1418, #8b1e24); }
+        .lawyer-5 { background: linear-gradient(135deg, #5c1215, #7c1a1f); }
+        .lawyer-6 { background: linear-gradient(135deg, #4d0f11, #9b282e); }
+        .lawyer-7 { background: linear-gradient(135deg, #6b1418, #7c1a1f); }
+        .lawyer-8 { background: linear-gradient(135deg, #2c2520, #5c1215); }
+
+        /* Simbol hukum minimalis (Scale/Timbangan) sebagai corak foto */
+        .team-img::before {
+            content: "⚖";
+            font-size: 50px;
+            color: rgba(251, 248, 241, 0.15);
+        }
+
+        .team-info {
+            padding: 20px 15px;
+            text-align: center;
+            background-color: var(--bg-cream);
+        }
+
+        .team-info h3 {
+            font-size: 18px;
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .team-info p {
+            font-size: 12px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        /* --- KONTAK & KONSULTASI --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139,30,36,0.2);
+        }
+
+        .contact-details {
+            padding: 50px;
+            background-color: #6b1418;
+            border-right: 1px solid rgba(251,248,241,0.1);
+        }
+
+        .contact-details h3 {
+            font-size: 28px;
+            color: var(--bg-cream-dark);
+            margin-bottom: 30px;
+        }
+
+        .contact-info-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-info-item h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--bg-cream-dark);
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .contact-info-item p {
+            font-size: 16px;
+            color: var(--bg-cream);
+        }
+
+        .contact-form {
+            padding: 50px;
+        }
+
+        .contact-form h3 {
+            font-size: 28px;
+            color: var(--bg-cream);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background-color: rgba(251, 248, 241, 0.08);
+            border: 1px solid rgba(251, 248, 241, 0.2);
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--bg-cream-dark);
+            background-color: rgba(251, 248, 241, 0.15);
+        }
+
+        .form-group textarea {
+            resize: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #2c2520;
+            color: var(--bg-cream-dark);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            border-top: 2px solid var(--primary-red);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            .about-container, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .contact-details, .contact-form {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">UPHOLD<span>JUSTICE</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#practice">Bidang Praktik</a></li>
+                <li><a href="#team">Advokat</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero" style="max-width: 100%; width: 100%;">
+        <div class="hero-content">
+            <h1>Teguh Menegakkan Keadilan</h1>
+            <p>Uphold Justice hadir sebagai benteng pertahanan hukum Anda. Kami memadukan keberanian, integritas, dan strategi hukum tajam untuk memastikan hak-hak Anda terjaga sepenuhnya.</p>
+            <a href="#contact" class="btn">Konsultasi Hukum</a>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="about">
+        <h2 class="section-title">Tentang Firma Hukum Kami</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Keadilan yang Tidak Tergoyahkan</h3>
+                <p>Firma Hukum <strong>Uphold Justice</strong> didirikan atas dasar komitmen kaku terhadap kebenaran dan supremasi hukum. Di bawah bendera keberanian, kami mengabdikan keahlian terbaik kami untuk memberikan pembelaan yang tidak tertandingi, baik dalam koridor litigasi maupun penyelesaian non-litigasi.</p>
+                <p>Latar belakang bendera merah kami melambangkan keberanian pantang mundur, dipadukan dengan warna cream yang mencerminkan ketenangan, kejujuran, dan transparansi penuh kepada setiap klien yang memercayakan perkaranya kepada kami.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h4>98%</h4>
+                    <p>Kasus Selesai</p>
+                </div>
+                <div class="stat-box">
+                    <h4>15+</h4>
+                    <p>Tahun Pengalaman</p>
+                </div>
+                <div class="stat-box">
+                    <h4>8</h4>
+                    <p>Advokat Senior</p>
+                </div>
+                <div class="stat-box">
+                    <h4>100%</h4>
+                    <p>Dedikasi Total</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIDANG PRAKTIK -->
+    <div class="practice-bg" id="practice">
+        <section>
+            <h2 class="section-title">Bidang Praktik Hukum</h2>
+            <div class="grid-practice">
+                <div class="practice-card">
+                    <h3>Hukum Bisnis & Korporasi</h3>
+                    <p>Pendampingan legalitas perusahaan, merger & akuisisi, restrukturisasi aset, penyusunan kontrak komersial, serta audit kepatuhan regulasi industri bisnis Anda.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Litigasi Perdata & Komersial</h3>
+                    <p>Penyelesaian sengketa bisnis, wanprestasi, sengketa kepemilikan tanah, hingga eksekusi jaminan melalui jalur pengadilan dengan strategi pembelaan yang agresif.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Hukum Pidana Perusahaan</h3>
+                    <p>Perlindungan serta penanganan kasus tindak pidana kerah putih (white-collar crime), fraud korporasi, korupsi, serta pendampingan di tingkat penyidikan hingga peradilan.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Hak Kekayaan Intelektual</h3>
+                    <p>Pendaftaran, perlindungan, dan penyelesaian sengketa terkait Hak Cipta, Merek Dagang, Paten, serta Rahasia Dagang untuk mengamankan inovasi bisnis Anda.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Ketenagakerjaan & PHK</h3>
+                    <p>Penyusunan Peraturan Perusahaan (PP), negosiasi PKB, serta penanganan perselisihan hubungan industrial (PHI) antara manajemen dan serikat pekerja.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Hukum Keluarga & Waris</h3>
+                    <p>Penanganan perkara hukum privat yang sensitif termasuk pembagian harta bersama, sengketa waris, hibah, hingga legalitas perkawinan campuran internasional.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TIM ADVOKAT (8 ANGGOTA) -->
+    <section id="team">
+        <h2 class="section-title">8 Advokat Utama Kami</h2>
+        <div class="grid-team">
+            <!-- Advokat 1 -->
+            <div class="team-card">
+                <div class="team-img lawyer-1"></div>
+                <div class="team-info">
+                    <h3>M. Ali Akbar</h3>
+                    <p>1253010151</p>
+                </div>
+            </div>
+            <!-- Advokat 2 -->
+            <div class="team-card">
+                <div class="team-img lawyer-2"></div>
+                <div class="team-info">
+                    <h3>M Rifki Firmansyah</h3>
+                    <p>1253010139</p>
+                </div>
+            </div>
+            <!-- Advokat 3 -->
+            <div class="team-card">
+                <div class="team-img lawyer-3"></div>
+                <div class="team-info">
+                    <h3>Gilang Raya Saputra</h3>
+                    <p>1253010174</p>
+                </div>
+            </div>
+            <!-- Advokat 4 -->
+            <div class="team-card">
+                <div class="team-img lawyer-4"></div>
+                <div class="team-info">
+                    <h3>M Salman Faris</h3>
+                    <p>1253010160</p>
+                </div>
+            </div>
+            <!-- Advokat 5 -->
+            <div class="team-card">
+                <div class="team-img lawyer-5"></div>
+                <div class="team-info">
+                    <h3>Muhammad Zaky H</h3>
+                    <p>1253010161</p>
+                </div>
+            </div>
+            <!-- Advokat 6 -->
+            <div class="team-card">
+                <div class="team-img lawyer-6"></div>
+                <div class="team-info">
+                    <h3>Azkia Kamelia Mupidah</h3>
+                    <p>1253010168</p>
+                </div>
+            </div>
+            <!-- Advokat 7 -->
+            <div class="team-card">
+                <div class="team-img lawyer-7"></div>
+                <div class="team-info">
+                    <h3>Shopa Ramadhani</h3>
+                    <p>1253010163</p>
+                </div>
+            </div>
+            <!-- Advokat 8 -->
+            <div class="team-card">
+                <div class="team-img lawyer-8"></div>
+                <div class="team-info">
+                    <h3>Diyanah Arifin</h3>
+                    <p>1253010154</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & KONSULTASI -->
+    <section id="contact">
+        <h2 class="section-title">Mulai Konsultasi</h2>
+        <div class="contact-wrapper">
+            <!-- Informasi Kontak -->
+            <div class="contact-details">
+                <h3>Hubungi Kantor Kami</h3>
+                <div class="contact-info-item">
+                    <h4>Alamat Utama</h4>
+                    <p>UIN Sunan Gunung Djati Bandung, Cibiru, Bandung, Jawa Barat</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Telepon & Fax</h4>
+                    <p>+62 (021) 444-3232 / +62 (021) 555-6767</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Surat Elektronik</h4>
+                    <p>contact@upholdjustice.com</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Jam Operasional</h4>
+                    <p>Senin - Jumat: 08.30 - 17.00 WIB</p>
+                </div>
+            </div>
+            <!-- Formulir Kontak -->
+            <div class="contact-form">
+                <h3>Sampaikan Kasus Anda</h3>
+                <form action="#" method="POST" onsubmit="alert('Terima kasih. Permohonan Anda telah terkirim ke sistem Uphold Justice. Advokat kami akan segera menghubungi Anda.'); return false;">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Alamat Email Aktif" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nomor Telepon/WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Garis besar atau ringkasan permasalahan hukum Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Kirim Permohonan Konsultasi</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 UPHOLD JUSTICE Law Firm. All Rights Reserved. Regulasi Perlindungan Klien Diberlakukan.</p>
+    </footer>
+
+</body>
+</html>
